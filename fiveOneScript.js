@@ -180,6 +180,15 @@ function getMoreInfo()
 
 
 //CHANGING ROTATIONS-------------------------------------------------------------------------------------------------------------------------
+document.getElementById("rotate-button").addEventListener("click", function() {
+    var targetElement = document.querySelector(".rotation-title"); 
+    targetElement.scrollIntoView({
+        behavior: "smooth" 
+    })
+})
+
+
+
 
 function rotateFiveOne()
 {
