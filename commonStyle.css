@@ -1,0 +1,345 @@
+
+/* KEYFRAME ANIMATIONSSSS---------------------------------------------------------------------------------- */
+@keyframes slideUp
+{
+    from 
+    {
+        transform: translateY(0%);
+    }
+    to
+    {
+        transform: translateY(-100%); 
+    }
+}
+
+
+@keyframes slideDown
+{
+    from
+    {
+        transform: translateY(0%); 
+    }
+    to
+    {
+        transform: translateY(100%); 
+    }
+}
+
+@keyframes slideFromLeft
+{
+    from
+    {   
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to 
+    {
+        opacity: 1;
+        transform: translateX(0); 
+    }
+}
+
+@keyframes slideFromRight
+{
+    from 
+    {
+        opacity: 0;
+        transform: translateX(100%); 
+    }
+    to 
+    {
+        opacity: 1;
+        transform: translateX(0%); 
+    }
+}
+
+@keyframes appear
+{
+    from{
+        opacity: 0;
+    }
+    to 
+    {
+        opacity: 1;
+    }
+}
+
+
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+    background-color: var(--backColor);
+    color: white;
+    font-weight: bold; 
+}
+
+*
+{
+    z-index: 1;
+}
+body,html
+{
+    height: 100%;
+}
+
+/* variable colors */
+
+:root
+{
+    --backColor: rgb(31, 31, 31);
+    --blue: rgb(13, 52, 179); 
+    --pink: rgb(221, 77, 240);
+    --red: rgb(192, 50, 50);
+    --green: rgb(92, 155, 20);
+    --violet: rgb(86, 70, 231);
+    --orange: rgb(248, 93, 3);
+    --yellow: rgb(223, 223, 41);;
+    --gray: rgba(58, 58, 58, 0.986); 
+}
+
+.greeting-top-half
+{
+    font-size: 4rem;
+    background-color: var(--backColor); 
+    color: white;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 50%; 
+    z-index: 5;
+
+    animation-name: slideUp;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 2.5s;
+}
+
+.greeting-bot-half
+{ 
+    font-size: 4rem;
+    background-color: var(--backColor); 
+    position: fixed;
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; 
+    width: 100%;
+    height: 50%;
+    top: 50%;
+    z-index: 5;
+    
+    animation-name: slideDown;
+    animation-duration: 1s; 
+    animation-fill-mode: forwards;
+    animation-delay: 2.5s;
+}
+
+#title-one
+{
+    animation-name: slideFromLeft;
+    animation-duration: 2s; 
+}
+
+#title-two
+{
+    animation-name: slideFromRight;
+    animation-duration: 2s;
+}
+
+.wrapper
+{  
+    font-family: 'Outfit', sans-serif;
+    display: flex; 
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content; 
+    overflow: hidden; 
+}
+
+.wrapper.blur
+{
+    filter: blur(0.4rem);
+    pointer-events: none;
+}
+
+/* NAVIGATION BAR ----------------------------------------------------------------------------------------------------- */
+
+.nav-bar
+{
+    z-index: 3;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 5rem;
+    top: 0;
+    left: 0;
+    color: white; 
+    font-size: 6rem;
+    background-color: var(--orange);
+    transition: all ease 0.4s;
+}
+
+.nav-bar.blur 
+{
+    filter: blur(0.4rem); 
+}
+
+.nav-bar.hide 
+{
+    transform: translateY(-5rem)
+}
+
+#nav-bar-btn.active
+{
+    display: none;
+    opacity: 0;
+}
+
+#nav-bar-btn
+{
+    position: relative; 
+    color: white; 
+    font-size: 5rem;
+    opacity: 1;
+}
+
+#nav-bar-x
+{
+    position: relative;
+    color: white;
+    font-size: 5rem;
+    display: none;
+}
+
+#nav-bar-x.active
+{
+    display: block;
+}
+
+#nav-menu
+{
+    position: fixed; 
+    overflow: hidden;
+    color: white;
+    top: 5rem; 
+    right: 0;
+    left: 0;
+    transform: translateY(-20rem); 
+    background: white;
+    width: 100%; 
+    opacity: 85%;
+    height: 15rem;
+    transition: all ease 0.3s;
+    z-index: 2;
+}
+
+#nav-menu.active
+{
+    transform: translateY(0%); 
+}
+
+#nav-menu-container
+{
+    display: flex;
+    overflow: hidden; 
+    position: relative;
+    flex-direction: column;
+    top: 1rem;
+    font-size: 1.8rem;
+    color: black;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;
+    height: fit-content;
+    width: 100%; 
+}
+
+
+.nav-btn
+{
+    font-family: 'Outfit', sans-serif;
+    position: relative;
+    overflow: hidden; 
+    font-size: 1.5rem;
+    background-color: rgba(240, 240, 240, 0.89);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: black; 
+    border: none;
+    width: fit-content; 
+    opacity: 0;
+    transition: all ease 1.5s; 
+}
+
+.nav-btn.navShow
+{
+    opacity: 1; 
+}
+
+.nav-btn.underline::before
+{
+    content: '';
+    position: absolute; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0.2rem; 
+    background-color: black;
+    transition: transform 200ms ease-in-out;
+
+    transform: scaleX(0); 
+}
+
+.nav-btn.underline:hover::before,
+.nav-btn.underline:hover:focus::before
+{
+    transform: scaleX(1); 
+}
+
+
+@media only screen and (min-width: 768px)
+{
+    #nav-menu-container
+    {
+        flex-direction: row;
+        top: 7rem;
+        justify-content: space-evenly;
+    }
+
+    .nav-btn
+    {
+        background-color: transparent;
+    }
+}
+
+@media only screen and (min-width: 1280px)
+{
+    .greeting-bot-half
+    {
+        font-size: 8rem; 
+    }
+
+    .greeting-top-half 
+    {
+        font-size: 8rem; 
+    }
+}
+
+@media only screen and (min-width: 1920px)
+{
+    .nav-btn
+    {
+        font-size: 2rem;
+    }
+}

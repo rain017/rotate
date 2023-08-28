@@ -1,0 +1,405 @@
+
+/* ----------------------------------------------------UPPER HALF----------------------------------------------------------------------------- */
+
+
+
+.statement
+{
+    display: flex;
+    position: relative; 
+    margin-top: 5rem ;
+    font-size: 4rem;
+    text-align: center;
+    flex-direction: column;
+    width: 80%; 
+    height: fit-content; 
+    padding: 2rem; 
+    color: white;
+}
+
+.ball-wind 
+{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;  
+    gap: 0;
+    width: fit-content; 
+    height: fit-content;
+}
+
+
+
+
+
+
+
+/* -------------------------------------------LOWER HALF--------------------------------------------------------------------- */
+
+
+
+.pop-out-quest
+{
+    display: block;
+    position: relative;
+    color: white;
+    padding: 1rem; 
+    text-align: center;
+    font-size: 2rem;
+    width: fit-content;
+    height: fit-content;
+    background: var(--gray); 
+    border-bottom: 0.15rem solid var(--gray); 
+    overflow: visible; 
+}
+
+#info-text
+{
+    position: relative;
+    width: 80%;
+    height: fit-content;
+    color: white;
+    transition: all ease 0.3s;
+    display: flex;
+    line-height: 1.5;
+    font-size: 1.2rem;
+    padding: 3rem 0rem 3rem 0rem;
+    text-align: center;
+    border-bottom: 0.15rem solid rgb(53, 52, 52);
+    background-color: transparent;
+    overflow: visible; 
+
+    transition: all ease 1.5s;
+    opacity: 1;
+}
+
+.lower-container
+{
+    display: flex;
+    position: relative; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;  
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.info
+{
+    opacity: 1;
+}
+
+info.infoShow
+{
+    opacity: 1;
+}
+
+#five-one-info
+{
+    display: flex; 
+    text-align: center; 
+    align-items: center;
+    flex-direction: column;
+    font-size: 1rem;
+    color: white;
+    background: var(--gray); 
+    width: 80%;
+    height: fit-content; 
+    margin: 3rem;
+    padding: 0.5rem;
+    border-radius: 4rem 0rem 4rem 0rem;
+}
+
+#six-two-info
+{
+    display: flex; 
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1rem;
+    color: white;
+    background: var(--gray); 
+    width: 80%;
+    height: fit-content; 
+    border-top: 0.2rem solid var(--gray); 
+    margin: 3rem;
+    padding: 0.5rem;
+    border-radius: 0rem 4rem 0rem 4rem;
+}
+
+#six-two-info h3
+{
+    font-size: 4rem;
+    margin: 0; 
+    margin-top: 3rem;
+}
+
+#five-one-info h3
+{
+    font-size: 4rem; 
+    margin: 0;
+    margin-top: 3rem;
+}
+
+
+.button-container
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    width: fit-content;
+    height: fit-content;
+}
+
+.button
+{
+    font-family: 'Outfit', sans-serif;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    color: white;
+    background-color: var(--backColor); 
+    height: 5rem;
+    width: fit-content;
+    padding: 1rem;  
+    border: 0.3rem solid var(--blue);
+    transition: all ease 1.5s;
+    opacity: 0;
+    transform: translateY(100px);
+    z-index: 2; 
+}
+
+.button.show
+{
+    transform: translateX(0); 
+    opacity: 1;
+}
+
+.button.btn-background-slide::before
+{
+    content: '';
+    position: absolute; 
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: var(--blue); 
+    overflow: hidden; 
+    transition: transform 300ms ease-in-out; 
+    transform: scaleX(0); 
+    transform-origin: left; 
+}
+
+.button.button.btn-background-slide:hover::before
+{
+    transform: scaleX(1); 
+    z-index: 1;
+}
+
+.button.btn-background-slide 
+{
+    z-index: 1;
+}
+
+
+
+span
+{
+    margin-left: 1rem;
+}
+
+#button-one 
+{
+    margin: 1rem 0rem 1rem 0rem;
+    border-radius: 2rem 0rem 2rem 0rem; 
+}
+
+#button-two
+{
+    margin: 1rem 0rem 1rem 0rem;
+    border-radius: 0rem 2rem 0rem 2rem; 
+}
+
+.footer
+{
+    margin-top: 4rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20rem;
+    background-color: var(--orange);
+}
+
+.credit
+{
+    color: rgb(219, 219, 219);
+    font-size: 1rem;
+    font-family: 'Outfit', sans-serif;
+    position: absolute;
+    bottom: 2rem;
+}
+
+/* ------------------------------------TABLET MODE-------------------------------------------------------------- */
+@media only screen and (min-width: 768px) 
+{
+    .statement
+    {
+        display: -webkit-box;
+        -webkit-line-clamp: 4; 
+        -webkit-box-orient: vertical; 
+        white-space: normal;
+        text-align: center;
+        width: fit-content;
+        font-size: 7rem;
+    }
+
+    .pop-out-quest
+    {
+        margin-top: 6rem; 
+        font-size: 2.5rem; 
+    }
+
+    #info-text
+    {
+        font-size: 2rem;
+    }
+
+    #five-one-info
+    {
+        width: 70%;
+        gap: 1rem;
+    }
+
+    #five-one-info p 
+    {
+        display: -webkit-box;
+        -webkit-line-clamp: 4; 
+        -webkit-box-orient: vertical; 
+        white-space: normal;
+        font-size: 1.8rem;
+        padding: 2rem;
+    }
+
+    #six-two-info 
+    {
+        width: 70%;
+        gap: 1rem;
+    }
+
+    #six-two-info p 
+    {
+        display: -webkit-box;
+        -webkit-line-clamp: 4; 
+        -webkit-box-orient: vertical; 
+        white-space: normal;
+        font-size: 1.8rem;
+        padding: 2rem;
+    }
+
+    .button 
+    {
+        font-size: 3rem;
+    }
+
+    .footer img 
+    {
+        scale: 150%; 
+    }
+}
+
+/* -------------------------------------------------COMPUTER MODE----------------------------------------------------------------------- */
+
+@media only screen and (min-width: 1280px)
+{
+    .statement 
+    {
+        font-size: 10rem;
+        width: 50%;
+    }
+
+    .pop-out-quest 
+    {
+        padding: 2rem;
+        font-size: 4rem; 
+    }
+
+    #info-text 
+    {
+        width: 70%;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; 
+        -webkit-box-orient: vertical; 
+        white-space: normal;
+        justify-content: center;
+    }
+
+    #five-one-info 
+    {
+        margin-top: 3rem; 
+    }
+
+    #five-one-info p 
+    {
+        display: -webkit-box;
+        -webkit-line-clamp: 4; 
+        -webkit-box-orient: vertical; 
+        white-space: normal;
+        font-size: 1.8rem;
+        padding: 2rem;
+    }
+
+    #six-two-info 
+    {
+        width: 70%;
+        gap: 1rem;
+    }
+
+    #six-two-info p 
+    {
+        display: -webkit-box;
+        -webkit-line-clamp: 4; 
+        -webkit-box-orient: vertical; 
+        white-space: normal;
+        font-size: 1.8rem;
+        padding: 2rem;
+    }
+
+    .button 
+    {
+        font-size: 3rem;
+        height: 8rem;
+    }
+
+    .footer img 
+    {
+        scale: 150%; 
+    }
+}
+
+@media only screen and (min-width: 1366px)
+{
+    .button-container
+    {
+        flex-direction: row;
+    }
+
+    #five-one-info 
+    {
+        width: 40%;
+    }
+
+    #six-two-info 
+    {
+        width: 40%;
+    }
+    
+}

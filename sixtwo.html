@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rotationDisplay.css">
+    <link rel="stylesheet" href="commonStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
+    <script defer src="fiveOneScript.js"></script>
+    <script defer src="sixTwoScript.js"></script>
+
+    <title>6-2 Rotation | Rotate</title>
+</head>
+<body>
+
+    <div class="greeting-top-half">
+        <span id="title-one">6-2</span>
+    </div>
+    <div class="greeting-bot-half">
+        <span id="title-two">Rotation</span>
+    </div>
+
+    <div class="more-info">
+        <div style="width: 100%; height: fit-content; display: flex; justify-content: flex-end; ">
+            <ion-icon name="close-outline" class="info-x" onclick="getMoreInfo()"></ion-icon>
+        </div>
+        <div class="more-info-text"></div>
+        <img src="rotate-logo-black.png" alt="logo-black">
+    </div>
+
+    <div class="nav-bar">
+        <img id="rotate-logo-ball" src="rotate-logo-ball-white.png" alt="rotate-ball" onclick="location.href='index.html'">
+        <ion-icon id="nav-bar-btn" onclick="menu()" name="menu-outline"></ion-icon>
+        <ion-icon name="close-outline" id="nav-bar-x" onclick="menu()"></ion-icon>
+    </div>
+    <div id="nav-menu">
+        <div id="nav-menu-container">
+            <button class="nav-btn underline" onclick="location.href='index.html'">Home</button>
+            <button class="nav-btn underline" onclick="location.href='fiveone.html'">5-1 Rotation</button>
+            <button class="nav-btn underline" onclick="location.href='fiveone.html'">6-2 Rotation</button>
+        </div>
+    </div>  
+
+    <div class="wrapper">
+
+        <div class="title-and-status">
+           <div class="rotation-title">
+                <h1>6-2 Rotation</h1>
+            </div>
+
+            <div id="status">
+                <p>Currently in: <b id="status-text">BASE</b> </p>
+            </div> 
+        </div>
+
+        <div class="court-and-interface">
+
+        
+
+                <div class="court">
+                    <div id="OH1" class="player" onclick="displayOH1Info()">OH1</div>
+                    <div id="MB2" class="player" onclick="displayMB2Info()">MB2</div>
+                    <div id="OPP" class="player" onclick="displayOP1Info()">OP1</div>
+                    <div id="L" class="player" onclick="displayLiberoInfo()">L</div>
+                    <div id="OH2" class="player" onclick="displayOH2Info()">OH2</div>
+                    <div id="S" class="player" onclick="displayS1Info()">S1</div>
+                    <div id="MB1" class="player" onclick="displayMB1Info()">MB1</div>
+                    <div id="S2" class="player" onclick="displayS2Info()">S2</div>
+                    <div id="OPP2" class="player" onclick="displayOP2Info()">OP2</div>
+                </div>
+
+                <div class="rotation-changer-container">
+
+                    <div class="base-and-info">
+                        <button class="base-btn" onclick="baseSixTwo()">Return to Base</button>
+                        <div class="player-info-container">
+                            <div class="player-info-text">Press on a player for info</div>
+                            <button class="read-more-btn" onclick="getMoreInfo()">Read More</button>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="rotation-chooser">
+
+                        <div class="button-container">
+                            <button class="button" id="serve" onclick="serveOn()">
+                                Serving
+                            </button>
+                            <button class="button" id="receive" onclick="receiveOn()">
+                                Receiving
+                            </button>
+                        </div>
+
+                        <div class="rotation-number">
+                            <div class="arrow-button-container">
+                                <button class="arrow-button" onclick="minus()" style="border-radius: 0.5rem 0rem 0rem 0.5rem">
+                                        <ion-icon name="arrow-back-outline"></ion-icon>
+                                </button>
+                                <span id="num">1</span>
+                                <button class="arrow-button" onclick="plus()" style="border-radius: 0rem 0.5rem 0.5rem 0rem">
+                                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                                </button> 
+                            </div>
+                            <button class="button" id="rotate-button" onclick="rotateSixTwo()">Rotate
+                                <img id="rotate-logo-ball" src="rotate-logo-ball-white.png" alt="rotate-ball" width="40">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+            <div class="footer">
+                <img src="rotate-logo-white.png" alt="rotate-logo" width="250">
+                <span class="credit">Created my free logo at <a style="color: rgb(219, 219, 219);" href="https://logomakr.com/">logomakr.com</a> </span>
+            </div>
+        
+
+    </div>   <!--END OF WRAPPER -->
+   
+   
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
