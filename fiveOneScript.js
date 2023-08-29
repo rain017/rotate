@@ -46,6 +46,7 @@ const navBar = document.querySelector(".nav-bar");
 window.addEventListener("scroll", () => {
     if (lastScrollY < window.scrollY)
     {
+        
         navBar.classList.add("hide");
     }
     else
@@ -54,6 +55,13 @@ window.addEventListener("scroll", () => {
     }
     lastScrollY = window.scrollY;
 })
+
+//makes sure taskbar is visible at the very top 
+if (window.scrollY == 0) 
+{
+    document.querySelector(".nav-bar").classList.remove("hide"); 
+}
+
 
 /*--------------------------------------------------FIVE ONE ROTATION DISPLAY----------------------------------------*/
 
@@ -103,12 +111,11 @@ function receiveOn()
     serve.classList.remove("active"); 
     receive.classList.add("active"); 
     isServing = false;
-   
 }
 
 //Player info------------------------------------------------------------------------------------------------------------------------------------------------------------------
 var sInfo = "Setters are responsible for the second touch whenever possible. They're in the front row for rotations 4-6 and in the back row for 1-3";
-var oInfo = "Opposite hitters will play defense and hit on the right side. They will be in the front row in rotations 1-3 and in the back row in 4-6";
+var oInfo = "Opposite hitters will play defense and hit on the right side. They will be in the front row for rotations 1-3 and for the back row in 4-6";
 var mInfo = "Middle blockers have to read the opponents offense and play defense against it. Middle Blocker 1 will serve for the libero in rotation 6";
 var oh1Info = "Outside hitter 1 is one of the main hitters of the team and will be in the front for rotations 1, 5, and 6";
 var oh2Info = "Outside hitter 2 is one of the main hitters of the team and will be in the front for rotations 2, 3, and 4";
