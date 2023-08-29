@@ -91,11 +91,13 @@ body,html
 {
     --backColor: rgb(31, 31, 31);
     --blue: rgb(13, 52, 179); 
+    --blueBorder: rgb(0, 0, 145);
     --pink: rgb(221, 77, 240);
     --red: rgb(192, 50, 50);
     --green: rgb(92, 155, 20);
     --violet: rgb(86, 70, 231);
     --orange: rgb(248, 93, 3);
+    --orangeBorder: rgb(158, 74, 0);
     --yellow: rgb(223, 223, 41);;
     --gray: rgba(58, 58, 58, 0.986); 
 }
@@ -185,7 +187,7 @@ body,html
     left: 0;
     color: white; 
     font-size: 6rem;
-    background-color: var(--orange);
+    background-color: var(--orange);  
     transition: all ease 0.4s;
 }
 
@@ -216,7 +218,7 @@ body,html
 #nav-bar-x
 {
     position: relative;
-    color: white;
+    color: white; 
     font-size: 5rem;
     display: none;
 }

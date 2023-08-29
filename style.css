@@ -40,7 +40,9 @@
 
 .pop-out-quest
 {
-    display: block;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
     position: relative;
     color: white;
     padding: 1rem; 
@@ -173,6 +175,9 @@ info.infoShow
     opacity: 0;
     transform: translateY(100px);
     z-index: 2; 
+    border-radius: 2rem; 
+    margin: 1rem 0 1rem 0; 
+    overflow: hidden; 
 }
 
 .button.show
