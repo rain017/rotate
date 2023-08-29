@@ -95,7 +95,7 @@ html
     font-size: 1.5rem;
     border-radius: 2rem 0rem 2rem 0rem;
     transition: all ease 0.25s;
-    border: none; 
+    border: 0.3rem solid var(--blueBorder);
 }
 
 .base-btn:active
@@ -139,7 +139,7 @@ html
     padding: 1rem;
     background-color: rgba(128, 128, 128, 0.623);
     color: white;
-    border: none;
+    border: 0.3rem solid gray; 
     opacity: 70%;
 }
 
@@ -152,6 +152,8 @@ html
 .more-info
 {
     display: flex;
+    justify-content: center;
+    align-items: center; 
     transform: translateY(100%);
     flex-direction: column;
     gap: 6rem;
@@ -171,6 +173,12 @@ html
     transform: translateX(0%);
 }
 
+.more-info span 
+{
+    font-size: 1rem; 
+    color: black; 
+}
+
 .more-info-text
 {
     width: 70%;
@@ -180,12 +188,7 @@ html
     font-size: 2rem; 
 }
 
-.info-x
-{
-    width: 5rem;
-    height: 5rem;
-    color: black; 
-}
+
 
 /*---------------------PLAYERS-----------------------------------------------------*/
 
@@ -477,19 +480,30 @@ html
     font-size: 1.5rem;
     padding: 1rem;
     height: fit-content;
-    width: fit-content; 
+    width: 8rem; 
     color: white;
     font-weight: bold;
     background-color: var(--blue);
+    border: 0.3rem solid var(--blueBorder); 
     transition: all ease 0.4s;
-    border: none;
 }
 
 .button.active 
 {
     scale: 140%;
     background-color: var(--orange); 
+    border: 0.3rem solid var(--orangeBorder);
 }
+
+#serve 
+{
+    border-radius: 2rem 0rem 2rem 0rem
+}
+
+#receive
+{
+    border-radius: 0rem 2rem 0rem 2rem
+} 
 
 
 .button-container button
@@ -509,7 +523,7 @@ html
     gap: 2rem;
     box-sizing: border-box; 
     height: fit-content;
-    width: fit-content;
+    width: fit-content; 
 }
 
 #num
@@ -536,7 +550,7 @@ html
     color: white; 
     font-size: 4rem;
     transition: 0.1s;
-    border: 0.3rem solid white;  
+    border: 0.3rem solid rgb(158, 74, 0);  
 }
 
 .arrow-button:active
@@ -574,6 +588,7 @@ html
 {
     transition: 0.05s;
     background-color: rgb(248, 93, 3);
+    border-color: var(--orangeBorder); 
     color: white;
 }
 
@@ -689,15 +704,15 @@ html
         flex-direction: column; 
     }
 
+    #serve, #receive 
+    {
+        border-radius: 0;
+    }
+
     .button-container button 
     {
         width: 9rem;
         scale: 140%; 
-    }
-
-    .rotation-number 
-    {
-        
     }
 
     .rotation-chooser 
