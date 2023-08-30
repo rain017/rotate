@@ -176,9 +176,9 @@ body,html
 /* NAVIGATION BAR ----------------------------------------------------------------------------------------------------- */
 
 .nav-bar
-{
+{ 
     z-index: 3;
-    position: fixed;
+    position: fixed; 
     display: flex;
     justify-content: space-between;
     width: 100%;

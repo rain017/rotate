@@ -5,7 +5,6 @@ window.onload = function() {
   };
   
 //TASKBAR FUNCTION
-
 function menu()
 {
     var m = document.getElementById("nav-menu"); 
@@ -27,10 +26,12 @@ window.addEventListener("scroll", () => {
     {
         navBar.classList.add("hide");
     }
-    else
+    else if(window.scrollY == 0)
     {
         navBar.classList.remove("hide")
     }
+    else
+        navBar.classList.remove("hide")
     lastScrollY = window.scrollY;
 })
 

@@ -125,9 +125,10 @@ html
     line-height: 2rem;
     font-size: 1.2rem;
     text-align: center;
-    padding: 1rem;
+    padding: 1.3rem;
     width: 9rem;
     height: 5rem;
+    border-bottom: 0.4rem solid var(--backColor); 
 }
 
 .read-more-btn
@@ -139,7 +140,8 @@ html
     padding: 1rem;
     background-color: rgba(128, 128, 128, 0.623);
     color: white;
-    border: 0.3rem solid gray; 
+    border: none;  
+    border-bottom: 0.3rem solid gray;  
     opacity: 70%;
 }
 
@@ -550,7 +552,8 @@ html
     color: white; 
     font-size: 4rem;
     transition: 0.1s;
-    border: 0.3rem solid rgb(158, 74, 0);  
+    width: fit-content; 
+    border: 0.3rem solid var(--orangeBorder); 
 }
 
 .arrow-button:active
@@ -685,8 +688,6 @@ html
         height: fit-content;
         font-size: 1.7rem;
         line-height: 2.5rem; 
-        border: 0.3rem solid rgb(97, 97, 97); 
-        border-radius: 2rem 0rem 2rem 0rem; 
     }
 
     .rotation-changer-container
@@ -712,7 +713,7 @@ html
     .button-container button 
     {
         width: 9rem;
-        scale: 140%; 
+        
     }
 
     .rotation-chooser 

@@ -46,13 +46,14 @@ const navBar = document.querySelector(".nav-bar");
 window.addEventListener("scroll", () => {
     if (lastScrollY < window.scrollY)
     {
-        
         navBar.classList.add("hide");
     }
-    else
+    else if (window.scrollY == 0)
     {
         navBar.classList.remove("hide")
     }
+    else
+        navBar.classList.remove("hide")
     lastScrollY = window.scrollY;
 })
 
