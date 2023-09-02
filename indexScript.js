@@ -7,34 +7,28 @@ window.onload = function() {
 //TASKBAR FUNCTION
 function menu()
 {
-    var m = document.getElementById("nav-menu"); 
-    m.classList.toggle('active'); 
-    var w = document.querySelector(".wrapper");
-    w.classList.toggle('blur')
-    var b = document.getElementById("nav-bar-btn");
-    b.classList.toggle('active'); 
-    var x = document.getElementById("nav-bar-x");
-    x.classList.toggle('active');
+    document.getElementById("nav-menu").classList.toggle('active'); 
+    document.querySelector(".wrapper").classList.toggle('blur'); 
+    document.getElementById("nav-bar-btn").classList.toggle("x"); 
+    document.getElementById("nav-bar-btn-1").classList.toggle('x'); 
+    document.getElementById("nav-bar-btn-2").classList.toggle('x'); 
 }
 
-//HIDES TASK BAR WHEN SCROLLING
+//HIDES TASK BAR WHEN SCROLLING 
 let lastScrollY = window.scrollY; 
 const navBar = document.querySelector(".nav-bar");
 
 window.addEventListener("scroll", () => {
-    if (lastScrollY < window.scrollY)
+    if (window.scrollY == 0)
     {
-        navBar.classList.add("hide");
+        navBar.classList.remove("hide");
     }
-    else if(window.scrollY == 0)
+    else if(lastScrollY < window.scrollY)
     {
-        navBar.classList.remove("hide")
+        navBar.classList.add("hide")
     }
-    else
-        navBar.classList.remove("hide")
     lastScrollY = window.scrollY;
 })
-
 //SCROLL ANIMATIONS
 
 //observer for the button scroll animations

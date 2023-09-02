@@ -31,8 +31,10 @@
 
     <div class="nav-bar">
         <img id="rotate-logo-ball" src="rotate-logo-ball-white.png" alt="rotate-ball" onclick="location.href='index.html'">
-        <ion-icon id="nav-bar-btn" onclick="menu()" name="menu-outline"></ion-icon>
-        <ion-icon name="close-outline" id="nav-bar-x" onclick="menu()"></ion-icon>
+        <div id="nav-bar-btn" onclick="menu()">
+            <div id="nav-bar-btn-1" style="transition: all ease 0.2s"></div>
+            <div id="nav-bar-btn-2" style="transition: all ease 0.2s"></div>
+        </div>
     </div>
     <div id="nav-menu">
         <div id="nav-menu-container">
@@ -56,8 +58,6 @@
 
         <div class="court-and-interface">
 
-        
-
                 <div class="court">
                     <div id="OH1" class="player" onclick="displayOH1Info()">OH1</div>
                     <div id="MB2" class="player" onclick="displayMB2Info()">MB2</div>
@@ -73,7 +73,9 @@
                 <div class="rotation-changer-container">
 
                     <div class="base-and-info">
-                        <button class="base-btn" onclick="baseSixTwo()">Return to Base</button>
+                        <div class="base-border-button-container">
+                            <button class="base-btn" onclick="baseSixTwo()">Return to Base</button>
+                        </div>
                         <div class="player-info-container">
                             <div class="player-info-text">Press on a player for info</div>
                             <button class="read-more-btn" onclick="getMoreInfo()">Read More</button>
@@ -85,27 +87,35 @@
                     <div class="rotation-chooser">
 
                         <div class="button-container">
-                            <button class="button" id="serve" onclick="serveOn()">
-                                Serving
-                            </button>
-                            <button class="button" id="receive" onclick="receiveOn()">
-                                Receiving
-                            </button>
+                            <div class="serve-border">
+                                <button class="button" id="serve" onclick="serveOn()">
+                                    Serving
+                                </button>
+                            </div>
+                            
+                            <div class="receive-border">
+                                <button class="button" id="receive" onclick="receiveOn()">
+                                    Receiving
+                                </button>
+                            </div>
                         </div>
 
                         <div class="rotation-number">
                             <div class="arrow-button-container">
-                                <button class="arrow-button" onclick="minus()" style="border-radius: 0.5rem 0rem 0rem 0.5rem">
+                                <button id="arrow-left" class="arrow-button" onclick="minus()">
                                         <ion-icon name="arrow-back-outline"></ion-icon>
                                 </button>
                                 <span id="num">1</span>
-                                <button class="arrow-button" onclick="plus()" style="border-radius: 0rem 0.5rem 0.5rem 0rem">
+                                <button id="arrow-right" class="arrow-button" onclick="plus()">
                                     <ion-icon name="arrow-forward-outline"></ion-icon>
                                 </button> 
                             </div>
-                            <button class="button" id="rotate-button" onclick="rotateSixTwo()">Rotate
-                                <img id="rotate-logo-ball" src="rotate-logo-ball-white.png" alt="rotate-ball" width="40">
-                            </button>
+    
+                            <div class="rotate-border-button-container">
+                                <button class="button" id="rotate-button" onclick="rotateSixTwo()">Rotate
+                                    <img id="rotate-logo-ball" src="rotate-logo-ball-white.png" alt="rotate-ball" width="40">
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

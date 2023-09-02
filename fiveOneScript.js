@@ -1,5 +1,5 @@
 
-//makes sure page loads at the top
+//makes sure page loads at the top ---------------------------------------------------------------------------------------------------------------------------
 window.onload = function() {
     window.scrollTo(0, 0);
   };
@@ -9,6 +9,7 @@ window.onload = function() {
   {
     document.querySelector(".player-info-text").innerHTML = "Click on a player for info"
     console.log('Window width is greater than 1279');
+    document.querySelector('.more-info-text').getElementsByTagName('span').innerHTML = 'Click anywhere to exit'
   }
 
 function blur()
@@ -16,17 +17,15 @@ function blur()
     document.querySelector(".wrapper").classList.toggle('blur'); 
 }
 
-//responsible for menu animation
+//responsible for menu animation ---------------------------------------------------------------------------------------------------------------------------
 
 function menu()
 {
-    var m = document.getElementById("nav-menu"); 
-    m.classList.toggle('active'); 
-    blur();
-    var b = document.getElementById("nav-bar-btn");
-    b.classList.toggle('active'); 
-    var x = document.getElementById("nav-bar-x");
-    x.classList.toggle('active');
+    document.getElementById("nav-menu").classList.toggle('active'); 
+    document.querySelector(".wrapper").classList.toggle('blur'); 
+    document.getElementById("nav-bar-btn").classList.toggle("x"); 
+    document.getElementById("nav-bar-btn-1").classList.toggle('x'); 
+    document.getElementById("nav-bar-btn-2").classList.toggle('x'); 
 }
 
 const nav = document.querySelectorAll(".nav-btn");
@@ -39,21 +38,19 @@ nav.forEach(button => {
     navObserver.observe(button)
 })
 
-//responsible for taskbar dissapearing on scroll 
+//responsible for taskbar dissapearing on scroll ---------------------------------------------------------------------------------------------------------------------------
 let lastScrollY = window.scrollY; 
 const navBar = document.querySelector(".nav-bar");
 
 window.addEventListener("scroll", () => {
-    if (lastScrollY < window.scrollY)
+    if (window.scrollY == 0)
     {
-        navBar.classList.add("hide");
+        navBar.classList.remove("hide");
     }
-    else if (window.scrollY == 0)
+    else if (lastScrollY < window.scrollY)
     {
-        navBar.classList.remove("hide")
+        navBar.classList.add("hide")
     }
-    else
-        navBar.classList.remove("hide")
     lastScrollY = window.scrollY;
 })
 
@@ -63,7 +60,55 @@ if (window.scrollY == 0)
     document.querySelector(".nav-bar").classList.remove("hide"); 
 }
 
+//BUTTON ANIMATIONS ------------------------------------------------------------------------------------------------
 
+//base button active animation
+var baseButton = document.querySelector('.base-btn'); 
+baseButton.addEventListener('click', function() {
+    baseButton.style.backgroundColor = 'white'; 
+    baseButton.style.color = 'var(--blue)'; 
+
+    var targetElement = document.querySelector(".rotation-title"); 
+    targetElement.scrollIntoView({
+        behavior: "smooth" 
+    })
+
+    setTimeout(function() {
+        baseButton.style.backgroundColor = 'var(--blue)'
+        baseButton.style.color = 'white'; 
+    }, 200)  
+})
+
+//arrow button active animation
+var leftArrow = document.getElementById('arrow-left');
+var rightArrow = document.getElementById('arrow-right'); 
+leftArrow.addEventListener('click', function() {
+    leftArrow.style.backgroundColor = 'white'; 
+    leftArrow.style.color = 'var(--orange)';
+    setTimeout(function() {
+        leftArrow.style.backgroundColor = 'var(--orange'; 
+        leftArrow.style.color = 'white';
+    }, 200)
+})
+rightArrow.addEventListener('click', function() {
+    rightArrow.style.backgroundColor = 'white'; 
+    rightArrow.style.color = 'var(--orange)';
+    setTimeout(function() {
+        rightArrow.style.backgroundColor = 'var(--orange'; 
+        rightArrow.style.color = 'white';
+    }, 200)
+})
+
+//rotate button animation
+var rotateButton = document.querySelector('#rotate-button');
+rotateButton.addEventListener('click', function() {
+    rotateButton.style.backgroundColor = 'var(--orange)';
+    document.querySelector('.rotate-border-button-container').style.backgroundColor = 'var(--orangeBorder)'; 
+    setTimeout(function() {
+        rotateButton.style.backgroundColor = 'var(--blue)';
+        document.querySelector('.rotate-border-button-container').style.backgroundColor = 'var(--blueBorder)'; 
+    }, 200)
+})
 /*--------------------------------------------------FIVE ONE ROTATION DISPLAY----------------------------------------*/
 
 
@@ -90,7 +135,7 @@ function minus()
 }
 
 //choosing whether serve or serve receive rotation----------------------------------------------------------------------------------------------------
-
+console.log(document.querySelectorAll('.button'))
 
 var isServing = false;
 
@@ -100,9 +145,11 @@ function serveOn()
     var serve = buttons[0]; 
     var receive = buttons[1]; 
     serve.classList.add("active"); 
+    document.querySelector(".serve-border").classList.add('active'); 
     receive.classList.remove("active"); 
+    document.querySelector('.receive-border').classList.remove('active'); 
     isServing = true;
-}   
+}    
 
 function receiveOn()
 {
@@ -110,7 +157,9 @@ function receiveOn()
     var serve = buttons[0]; 
     var receive = buttons[1]; 
     serve.classList.remove("active"); 
+    document.querySelector(".serve-border").classList.remove('active'); 
     receive.classList.add("active"); 
+    document.querySelector('.receive-border').classList.add('active'); 
     isServing = false;
 }
 
@@ -188,13 +237,14 @@ function getMoreInfo()
 
 
 //CHANGING ROTATIONS-------------------------------------------------------------------------------------------------------------------------
+
+//scrolls the user back up to see the rotation animation when button is pressed
 document.getElementById("rotate-button").addEventListener("click", function() {
     var targetElement = document.querySelector(".rotation-title"); 
     targetElement.scrollIntoView({
         behavior: "smooth" 
     })
 })
-
 
 
 

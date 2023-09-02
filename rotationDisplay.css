@@ -24,7 +24,8 @@ html
     padding: 0.5rem 1rem 0.5rem 1rem;
     text-align: center;
     background-color: var(--blue);
-    border-radius: 2rem 0rem 2rem 0rem;
+    clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
+
 }
 
 #status
@@ -43,151 +44,6 @@ html
 #status-text
 {
     color: var(--orange); 
-}
-
-.court-and-interface
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
-    width: 100%; 
-    
-}
-.court
-{
-    position: relative;
-    margin: 2rem 0rem 2rem 0rem;
-    width: 70%; 
-    height: 26rem;
-    border: 0.4rem solid white;
-    background: linear-gradient(to bottom, rgb(248, 93, 3) 29%, rgb(236, 146, 72) 30%);
-}
-
-.court::after
-{
-    content: "";
-    position: absolute;
-    top: 29%;
-    bottom: 69%;
-    left: 0;
-    right: 0;
-    background-color: white;
-    
-}
-
-.ten-foot
-{
-    margin-top: 7.5rem;
-    border: 0.2rem solid white;
-}
-
-.base-btn
-{
-    position: relative;
-    margin: 0;
-    font-family: 'Outfit', sans-serif;
-    padding: 1rem;
-    width: 8rem;
-    height: 8rem;
-    background-color: var(--blue); 
-    color: white;
-    font-size: 1.5rem;
-    border-radius: 2rem 0rem 2rem 0rem;
-    transition: all ease 0.25s;
-    border: 0.3rem solid var(--blueBorder);
-}
-
-.base-btn:active
-{
-    background-color: white;
-    color: var(--blue);
-}
-
-.player-info-container
-{
-    display: flex;
-    flex-direction: column; 
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
-    height: fit-content;
-}
-
-.player-info-text
-{
-    display: -webkit-box;
-    -webkit-line-clamp: 3; 
-    -webkit-box-orient: vertical; 
-    white-space: normal;
-    overflow: hidden;
-    line-height: 2rem;
-    font-size: 1.2rem;
-    text-align: center;
-    padding: 1.3rem;
-    width: 9rem;
-    height: 5rem;
-    border-bottom: 0.4rem solid var(--backColor); 
-}
-
-.read-more-btn
-{
-    font-family: 'Outfit', sans-serif;
-    text-decoration: none; 
-    font-size: 1.5rem;
-    width: fit-content; 
-    padding: 1rem;
-    background-color: rgba(128, 128, 128, 0.623);
-    color: white;
-    border: none;  
-    border-bottom: 0.3rem solid gray;  
-    opacity: 70%;
-}
-
-.read-more-btn:active 
-{
-    background-color: var(--orange); 
-    transition: all ease 0.3s;
-}
-
-.more-info
-{
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    transform: translateY(100%);
-    flex-direction: column;
-    gap: 6rem;
-    align-items: center; 
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    opacity: 80%;
-    z-index: 4;
-    
-    transition: all ease 0.5s; 
-}
-
-.more-info.active 
-{
-    transform: translateX(0%);
-}
-
-.more-info span 
-{
-    font-size: 1rem; 
-    color: black; 
-}
-
-.more-info-text
-{
-    width: 70%;
-    height: fit-content;
-    text-align: center; 
-    color: black; 
-    font-size: 2rem; 
 }
 
 
@@ -266,7 +122,7 @@ html
     background-color: rgb(92, 155, 20);
     border-radius: 4rem;
     transform: translate(-50%, -50%); 
-
+    
     scale: 70%;
     top: 45%;
     left: 107%; 
@@ -343,7 +199,7 @@ html
     transform: translate(-50%, -50%);  
 
     /* top 50 left 20 */
-    top: 50%;
+    top: 50%; 
     left: 20%; 
 }
 
@@ -435,6 +291,160 @@ html
 
 /* -------------------------------------------------END OF COURT----------------------------------------------------------------------------------------- */
 
+.court-and-interface
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    
+}
+.court
+{
+    position: relative;
+    margin: 2rem 0rem 2rem 0rem;
+    width: 70%; 
+    height: 26rem;
+    border: 0.4rem solid white;
+    background: linear-gradient(to bottom, rgb(248, 93, 3) 29%, rgb(236, 146, 72) 30%);
+}
+
+.court::after
+{
+    content: "";
+    position: absolute;
+    top: 29%;
+    bottom: 69%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    
+}
+
+.ten-foot
+{
+    margin-top: 7.5rem;
+    border: 0.2rem solid white;
+}
+
+.base-border-button-container
+{
+    display: flex; 
+    background-color: var(--blueBorder); 
+    justify-content: center; 
+    align-items: center; 
+    width: fit-content; 
+    height: fit-content; 
+    padding: 0.3rem; 
+    clip-path: polygon(20% 0%, 100% 0, 100% 20%, 100% 80%, 80% 100%, 0 99%, 0% 80%, 0% 20%);
+}
+
+.base-btn
+{
+    position: relative;
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    padding: 1rem;
+    width: 8rem;
+    height: 8rem;
+    background-color: var(--blue); 
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 2rem 0rem 2rem 0rem;
+    transition: all ease 0.25s;
+    border: none; 
+    clip-path: polygon(20% 0%, 100% 0, 100% 20%, 100% 80%, 80% 100%, 0 99%, 0% 80%, 0% 20%);
+}
+
+.player-info-container
+{
+    display: flex;
+    flex-direction: column; 
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+}
+
+.player-info-text
+{
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical; 
+    white-space: normal;
+    overflow: hidden;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-bottom: 1.3rem;
+    width: 9rem;
+    height: 5rem;
+    border-bottom: 0.4rem solid var(--backColor); 
+}
+
+.read-more-btn
+{
+    font-family: 'Outfit', sans-serif;
+    text-decoration: none; 
+    font-size: 1.5rem;
+    width: fit-content; 
+    padding: 1rem;
+    background-color: rgba(128, 128, 128, 0.623);
+    color: white;
+    border: none;  
+    border-bottom: 0.3rem solid gray;  
+    opacity: 70%;
+    clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
+
+}
+
+.read-more-btn:active 
+{
+    background-color: var(--orange); 
+    transition: all ease 0.3s;
+}
+
+.more-info
+{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    transform: translateY(100%);
+    flex-direction: column;
+    gap: 6rem;
+    align-items: center; 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 80%;
+    z-index: 4;
+    
+    transition: all ease 0.5s; 
+}
+
+.more-info.active 
+{
+    transform: translateX(0%);
+}
+
+.more-info span 
+{
+    font-size: 1rem; 
+    color: black; 
+}
+
+.more-info-text
+{
+    width: 70%;
+    height: fit-content;
+    text-align: center; 
+    color: black; 
+    font-size: 2rem; 
+}
+
 .rotation-changer-container
 {
     margin-top: 3rem;
@@ -476,6 +486,9 @@ html
 
 .button
 {
+    display: flex;
+    justify-content: center;
+    align-items:  center; 
     font-family: 'Outfit', sans-serif;
     position: relative;
     overflow: hidden;
@@ -486,33 +499,75 @@ html
     color: white;
     font-weight: bold;
     background-color: var(--blue);
-    border: 0.3rem solid var(--blueBorder); 
-    transition: all ease 0.4s;
+    transition: all ease 0.4s; 
 }
 
 .button.active 
 {
-    scale: 140%;
+    scale: 120%;
     background-color: var(--orange); 
     border: 0.3rem solid var(--orangeBorder);
 }
 
 #serve 
 {
-    border-radius: 2rem 0rem 2rem 0rem
+    transition: all ease 0.2s;
+    border: none; 
+    clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
 }
 
-#receive
+.serve-border
 {
-    border-radius: 0rem 2rem 0rem 2rem
+    display: flex; 
+    background-color: var(--blueBorder); 
+    justify-content: center; 
+    align-items: center; 
+    width: fit-content; 
+    height: fit-content; 
+    padding: 0.3rem; 
+    clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
+    transition: all ease 0.4s; 
+}
+
+.serve-border.active 
+{
+    scale: 120%; 
+    background-color: var(--orangeBorder); 
+    padding: 1rem; 
+}
+
+#receive 
+{
+    transition: all ease 0.2s;
+    border: none;  
+    clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
 } 
+ 
+.receive-border 
+{
+    display: flex; 
+    background-color: var(--blueBorder); 
+    justify-content: center; 
+    align-items: center; 
+    width: fit-content; 
+    height: fit-content; 
+    padding: 0.3rem; 
+    clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
+    transition: all ease 0.4s; 
+
+}
+
+.receive-border.active 
+{
+    scale: 120%; 
+    background-color: var(--orangeBorder); 
+    padding: 1rem; 
+}
 
 
 .button-container button
 {
     font-size: 1.3rem;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
 }
 
 
@@ -542,24 +597,31 @@ html
     font-size: 5rem;
     width: fit-content;
     height: fit-content;
-    background-color: var(--orange); 
-    border-radius: 0.5rem; 
+    background-color: var(--orangeBorder); 
+    clip-path: polygon(7% 0, 93% 0, 100% 20%, 100% 80%, 93% 100%, 7% 100%, 0 80%, 0 20%); 
+    padding: 0.5rem;   
 } 
 
-.arrow-button
+.arrow-button 
 {
+    display: flex;
+    align-items: center; 
     background-color: var(--orange); 
     color: white; 
     font-size: 4rem;
-    transition: 0.1s;
-    width: fit-content; 
-    border: 0.3rem solid var(--orangeBorder); 
+    transition: all ease 0.2s;
+    width: fit-content;
+    border: none;  
 }
 
-.arrow-button:active
+#arrow-left
 {
-    background-color: white;
-    color:rgb(248, 93, 3);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 100% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+
+#arrow-right
+{
+    clip-path: polygon(0 1%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 0 100%, 0% 80%, 0% 20%);
 }
 
 .rotation-chooser
@@ -568,6 +630,7 @@ html
     position: relative;
     padding: 3rem;
     width: 100%;  
+    height: fit-content;  
     display: flex;
     flex-direction: column;
     gap: 4rem;
@@ -584,15 +647,26 @@ html
     justify-content: center;
     align-items: center;
     font-size: 3rem;
-    border-radius: 2rem 0rem 2rem 0rem;
+    border: none; 
+    clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
 }
 
-#rotate-button:active
+.rotate-border-button-container
 {
-    transition: 0.05s;
-    background-color: rgb(248, 93, 3);
-    border-color: var(--orangeBorder); 
-    color: white;
+    transition: all ease 0.4s; 
+    display: flex; 
+    background-color: var(--blueBorder); 
+    justify-content: center; 
+    align-items: center; 
+    width: fit-content; 
+    height: fit-content; 
+    padding: 0.3rem; 
+    clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%); 
+}
+
+.rotate-border-button-container.active
+{
+    background-color: (--orangeBorder); 
 }
 
 .footer
@@ -628,11 +702,6 @@ html
 
 @media only screen and (min-width: 1280px)
 {
-
-    .nav-btn
-    {
-        
-    }
 
     .wrapper
     {
@@ -676,18 +745,28 @@ html
         scale: 130%; 
     }
 
-    .read-more-btn
+    .base-border-button-container
     {
-        display: none;
+        padding: 1.5rem; 
+        scale: 130%;  
+    }
+
+    .player-info-container
+    {
+        gap: 3rem; 
     }
 
     .player-info-text
     {
-        -webkit-line-clamp: initial; 
-        width: fit-content; 
-        height: fit-content;
-        font-size: 1.7rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; 
+        -webkit-box-orient: vertical; 
+        white-space: normal;
+        height: 6rem;
+        overflow: hidden;
+        scale: 120%; 
         line-height: 2.5rem; 
+        padding: 2rem;  
     }
 
     .rotation-changer-container
@@ -708,12 +787,12 @@ html
     #serve, #receive 
     {
         border-radius: 0;
+        clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
     }
 
     .button-container button 
     {
         width: 9rem;
-        
     }
 
     .rotation-chooser 
@@ -728,8 +807,14 @@ html
     {
         scale: 120%; 
     }
-}
 
+    .rotate-border-button-container
+    { 
+        scale: 120%; 
+        padding: 1.25rem 2rem 1.25rem 2rem;  
+    }
+}
+ 
 @media only screen and (min-width: 1920px)
 {
 
@@ -778,6 +863,12 @@ html
         scale: 160%; 
     }
 
+    .base-border-button-container
+    {
+        padding: 3rem; 
+        scale: 130%;  
+    }
+
     .player
     {
         width: 5rem;
@@ -796,6 +887,12 @@ html
         width: fit-content; 
         background-color: transparent; 
         flex-direction: row; 
+    }
+
+    .rotate-border-button-container
+    { 
+        scale: 120%; 
+        padding: 1.25rem 2rem 1.25rem 2rem;  
     }
 
     .button-container button
