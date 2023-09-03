@@ -622,9 +622,10 @@ html
 {
     display: flex;
     align-items: center; 
+    justify-content: center; 
     background-color: var(--orange); 
-    color: white; 
-    font-size: 4rem; 
+    color: white;
+    font-size: 3rem; 
     transition: all ease 0.2s;
     width: 5rem;  
     border: none;  
