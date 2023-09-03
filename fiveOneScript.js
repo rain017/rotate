@@ -84,22 +84,20 @@ baseButton.addEventListener('click', function() {
 })
 
 //arrow button active animation
-var leftArrow = document.getElementById('arrow-left');
-var rightArrow = document.getElementById('arrow-right'); 
-leftArrow.addEventListener('click', function() {
-    leftArrow.style.backgroundColor = 'white'; 
-    leftArrow.style.color = 'var(--orange)';
+var leftArrowBtn = document.getElementById('arrow-left-button');
+var leftArrow = document.querySelector('.arrow-left')
+var rightArrow = document.querySelector('.arrow-right')
+var rightArrowBtn = document.getElementById('arrow-right-button'); 
+leftArrowBtn.addEventListener('click', function() {
+    leftArrowBtn.style.backgroundColor = 'var(--orangeBorder)'; 
     setTimeout(function() {
-        leftArrow.style.backgroundColor = 'var(--orange'; 
-        leftArrow.style.color = 'white';
+        leftArrowBtn.style.backgroundColor = 'var(--orange)'; 
     }, 200)
 })
-rightArrow.addEventListener('click', function() {
-    rightArrow.style.backgroundColor = 'white'; 
-    rightArrow.style.color = 'var(--orange)';
+rightArrowBtn.addEventListener('click', function() {
+    rightArrowBtn.style.backgroundColor = 'var(--orangeBorder)'; 
     setTimeout(function() {
-        rightArrow.style.backgroundColor = 'var(--orange'; 
-        rightArrow.style.color = 'white';
+        rightArrowBtn.style.backgroundColor = 'var(--orange';  
     }, 200)
 })
 
@@ -111,7 +109,7 @@ rotateButton.addEventListener('click', function() {
     setTimeout(function() {
         rotateButton.style.backgroundColor = 'var(--blue)';
         document.querySelector('.rotate-border-button-container').style.backgroundColor = 'var(--blueBorder)'; 
-    }, 200)
+    }, 200) 
 })
 /*--------------------------------------------------FIVE ONE ROTATION DISPLAY----------------------------------------*/
 
