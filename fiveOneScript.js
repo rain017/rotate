@@ -68,10 +68,14 @@ baseButton.addEventListener('click', function() {
     baseButton.style.backgroundColor = 'white'; 
     baseButton.style.color = 'var(--blue)'; 
 
-    var targetElement = document.querySelector("#status"); 
-    targetElement.scrollIntoView({
+
+    if(window.innerWidth < 1280)
+    {
+        var targetElement = document.querySelector("#status"); 
+        targetElement.scrollIntoView({
         behavior: "smooth" 
     })
+    }
 
     setTimeout(function() {
         baseButton.style.backgroundColor = 'var(--blue)'
@@ -241,9 +245,12 @@ function getMoreInfo()
 //scrolls the user back up to see the rotation animation when button is pressed
 document.getElementById("rotate-button").addEventListener("click", function() {
     var targetElement = document.querySelector("#status"); 
-    targetElement.scrollIntoView({
-        behavior: "smooth" 
-    })
+    if(window.innerWidth < 1280)
+    {
+        targetElement.scrollIntoView({
+            behavior: "smooth" 
+        })
+    }
 })
 
 
