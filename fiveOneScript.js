@@ -9,10 +9,11 @@ window.onload = function() {
   {
     document.querySelector(".player-info-text").innerHTML = "Click on a player for info"
     console.log('Window width is greater than 1279');
-    document.querySelector('.more-info-text').getElementsByTagName('span').innerHTML = 'Click anywhere to exit'
-  }
-
-function blur()
+    document.querySelector('.more-info-exit-text').innerHTML = "Click anywhere to exit"
+  } 
+  console.log(document.querySelector('.player-info-text'))
+  console.log(document.querySelector('.more-info-exit-text'))
+function blur() 
 {
     document.querySelector(".wrapper").classList.toggle('blur'); 
 }
@@ -137,7 +138,6 @@ function minus()
 }
 
 //choosing whether serve or serve receive rotation----------------------------------------------------------------------------------------------------
-console.log(document.querySelectorAll('.button'))
 
 var isServing = false;
 
@@ -167,7 +167,7 @@ function receiveOn()
 
 //Player info------------------------------------------------------------------------------------------------------------------------------------------------------------------
 var sInfo = "Setters are responsible for the second touch whenever possible. They're in the front row for rotations 4-6 and in the back row for 1-3";
-var oInfo = "Opposite hitters will play defense and hit on the right side. They will be in the front row for rotations 1-3 and for the back row in 4-6";
+var oInfo = "Opposite hitters will play defense and hit on the right side. They will be in the front row for rotations 1-3 and in the back row for 4-6";
 var mInfo = "Middle blockers have to read the opponents offense and play defense against it. Middle Blocker 1 will serve for the libero in rotation 6";
 var oh1Info = "Outside hitter 1 is one of the main hitters of the team and will be in the front for rotations 1, 5, and 6";
 var oh2Info = "Outside hitter 2 is one of the main hitters of the team and will be in the front for rotations 2, 3, and 4";
@@ -329,9 +329,9 @@ function rotateFiveOne()
 var frontLeft = "top: 10%; left: 20%; scale: 100%;";
 var frontMid = "top: 10%; left: 50%; scale:100%";
 var frontRight = "top: 10%; left: 80%; scale: 100%;";
-var backLeft = "top: 60%; left: 20%; scale: 100%;";
+var backLeft = "top: 50%; left: 20%; scale: 100%;";
 var backMid = "top: 70%; left: 50%; scale: 100%;";
-var backRight = "top: 60%; left: 80%; scale: 100%;"; 
+var backRight = "top: 50%; left: 80%; scale: 100%;"; 
 var sub = "top: 35%; left: 107%; scale: 70%";
 
 //players ----------------------------------------------------------------------------------------------------------------------------
@@ -380,9 +380,19 @@ function baseFiveOne()
     libero.style.cssText += backLeft; 
     if(rotationNumber == 1)
     {
+        if(isServing == false)
+        {
+            opp.style.cssText += frontLeft; 
+            oh1.style.cssText += frontRight; 
+            setter.style.cssText += backRight; 
+            oh2.style.cssText += backMid; 
+        }
+        else
+        {
+            oppFront();
+            oh1Front();
+        }
         mb2.style.cssText += frontMid; 
-        oppFront();
-        oh1Front();
         mb1.style.cssText += sub; 
     }
     else if(rotationNumber == 2)
@@ -452,7 +462,7 @@ function fiveOneReceiveone()
     libero.style.cssText += "top: 70%; left: 50%; scale: 100%"; 
     oh1.style.cssText += "top: 65%; left: 75%";
     oh2.style.cssText += "top: 60%; left: 20%"; 
-    opp.style.cssText += "top: 20%; left: 20%"; 
+    opp.style.cssText += "top: 20%; left: 15%"; 
     mb1.style.cssText += "top: 35%; left: 107%; scale: 70%";
     mb2.style.cssText += "top: 20%; left: 50%; scale: 100%"; 
     
@@ -505,7 +515,7 @@ function fiveOneReceiveThree()
 function fiveOneServeFour()
 {
     setter.style.cssText += "top: 20%; left: 40%"; 
-    libero.style.cssText += "top: 40%; left: 45%; scale: 100%";
+    libero.style.cssText += "top: 40%; left: 60%; scale: 100%";
     oh1.style.cssText += "top: 70%; left: 50%";
     oh2.style.cssText += "top: 20%; left: 60%"; 
     opp.style.cssText += "top: 110%; left: 90%";
@@ -548,13 +558,13 @@ function fiveOneReceiveFive()
 
 function fiveOneServeSix()
 {
-    setter.style.cssText += "top: 20%; left: 60%"; 
+    setter.style.cssText += "top: 10%; left: 60%"; 
     libero.style.cssText += "top: 35%; left: 107%; scale: 70%"
-    oh1.style.cssText += "top: 20%; left: 40%";
+    oh1.style.cssText += "top: 20%; left: 50%";
     oh2.style.cssText +=  "top: 70%; left: 50%"; 
     opp.style.cssText += "top: 40%; left: 40%";
     mb1.style.cssText += "top: 110%; left: 90%; scale: 100%";
-    mb2.style.cssText += "top: 10%; left: 50%; scale: 100%";
+    mb2.style.cssText += "top: 10%; left: 40%; scale: 100%";
 }
 
 function fiveOneReceiveSix()
@@ -565,6 +575,5 @@ function fiveOneReceiveSix()
     oh2.style.cssText += "top: 70%; left: 50%"; 
     opp.style.cssText += "top: 90%; left: 30%";
     mb1.style.cssText += "top: 35%; left: 107%; scale: 70%";
-    mb2.style.cssText += "top: 20%; left: 20%; scale: 100%";
-    
+    mb2.style.cssText += "top: 20%; left: 15%; scale: 100%";
 }

@@ -171,12 +171,11 @@ info.infoShow
     height: 5rem;
     width: fit-content;
     padding: 1rem;  
-    transition: all ease 1.5s;
     opacity: 0;
     transform: translateY(100px);
-    z-index: 2; 
+    z-index: 1; 
     margin: 1rem 0 1rem 0; 
-    overflow: hidden; 
+    overflow: hidden;  
 }
 
 
@@ -194,24 +193,30 @@ info.infoShow
     right: 0;
     left: 0;
     bottom: 0;
-    z-index: -1;
+    
     background-color: var(--blue); 
     overflow: hidden; 
-    transition: transform 300ms ease-in-out; 
     transform: scaleX(0); 
+    transition: transform 300ms ease-in-out; 
+    z-index: -1; 
 }
 
 .button.btn-background-slide:hover::before,
 .button.btn-background-slide:focus::before
 {
     transform: scaleX(1); 
-    z-index: 1;
 }
 
 .button.btn-background-slide 
 {
-    z-index: -1;
+    z-index: 1; 
 }
+
+.button.btn-background-slide:hover,
+.button.btn-background-slide:focus 
+{
+    color: white; 
+} 
 
 span
 {
@@ -371,7 +376,7 @@ span
     }
 
     .footer img 
-    {
+    {         
         scale: 150%; 
     }
 }

@@ -143,7 +143,7 @@ function sixTwoReceiveOne()
     libero.style.cssText += "top: 70%; left: 50%; scale: 100%"; 
     oh1.style.cssText += "top: 65%; left: 75%";
     oh2.style.cssText += "top: 60%; left: 20%"; 
-    op1.style.cssText += "top: 20%; left: 20%; scale: 100%;"; 
+    op1.style.cssText += "top: 20%; left: 15%; scale: 100%;"; 
     mb2.style.cssText += "top: 20%; left: 50%; scale: 100%";
 
     mb1.style.cssText += "top: 45%; left: 107%; scale: 70%";
@@ -210,7 +210,7 @@ function sixTwoReceiveThree()
 function sixTwoServeFour()
 {
     op2.style.cssText += "top: 20%; left: 40%; scale: 100%"; 
-    libero.style.cssText += "top: 40%; left: 45%; scale: 100%";
+    libero.style.cssText += "top: 40%; left: 60%; scale: 100%";
     oh1.style.cssText += "top: 70%; left: 50%";
     oh2.style.cssText += "top: 20%; left: 60%"; 
     s2.style.cssText += "top: 110%; left: 90%; scale: 100%";
@@ -297,11 +297,21 @@ function baseSixTwo()
 {
     if(rotationNumber == 1)
     {
+        if(isServing == false)
+        {
+            op1.style.cssText += frontLeft;
+            s1.style.cssText += backRight; 
+            oh1.style.cssText += frontRight; 
+            oh2.style.cssText += backMid; 
+        }
+        else
+        {
+            
+            oppFront();  
+            oh1Front();
+        }
         mb2.style.cssText += frontMid; 
         libero.style.cssText += backLeft; 
-        oppFront(); 
-        oh1Front();
-
         mb1.style.cssText += "top: 45%; left: 107%; scale: 70%";
         s2.style.cssText += "top: 30%; left: 107%; scale: 70%"
         op2.style.cssText += "top: 15%; left: 107%; scale: 70%";
@@ -330,11 +340,20 @@ function baseSixTwo()
     }
     else if(rotationNumber == 4)
     {
+        if(isServing == false)
+        {
+            oh2.style.cssText += frontRight; 
+            oh1.style.cssText += backMid; 
+            op2.style.cssText += frontLeft; 
+            s2.style.cssText += backRight; 
+        }
+        else
+        {
+            oh2Front(); 
+            opp2Front(); 
+        }
         mb1.style.cssText += frontMid; 
         libero.style.cssText += backLeft;
-        oh2Front(); 
-        opp2Front(); 
-
         mb2.style.cssText += "top: 45%; left: 107%; scale: 70%";
         s1.style.cssText += "top: 30%; left: 107%; scale: 70%"
         op1.style.cssText += "top: 15%; left: 107%; scale: 70%";

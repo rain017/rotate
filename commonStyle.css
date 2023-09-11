@@ -30,12 +30,10 @@
     from
     {   
         opacity: 0;
-        transform: translateX(-100%);
     }
     to 
     {
         opacity: 1;
-        transform: translateX(0); 
     }
 }
 
@@ -44,12 +42,10 @@
     from 
     {
         opacity: 0;
-        transform: translateX(100%); 
     }
     to 
     {
         opacity: 1;
-        transform: translateX(0%); 
     }
 }
 
@@ -146,13 +142,13 @@ body,html
 #title-one
 {
     animation-name: slideFromLeft;
-    animation-duration: 2s; 
+    animation-duration: 3s;  
 }
 
 #title-two
 {
     animation-name: slideFromRight;
-    animation-duration: 2s;
+    animation-duration: 3s;
 }
 
 .wrapper
