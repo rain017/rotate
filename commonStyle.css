@@ -115,7 +115,7 @@ body,html
     animation-name: slideUp;
     animation-duration: 1s;
     animation-fill-mode: forwards;
-    animation-delay: 2.5s;
+    animation-delay: 2s;
 }
 
 
@@ -136,7 +136,7 @@ body,html
     animation-name: slideDown;
     animation-duration: 1s; 
     animation-fill-mode: forwards;
-    animation-delay: 2.5s;
+    animation-delay: 2s;
 }
 
 #title-one

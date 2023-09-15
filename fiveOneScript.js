@@ -8,13 +8,11 @@ window.onload = function() {
   if (window.innerWidth > 1279)
   {
     document.querySelector(".player-info-text").innerHTML = "Click on a player for info"
-    console.log('Window width is greater than 1279');
+    document.querySelector('.more-info-text').innerHTML = 'Click on a player for info'
     document.querySelector('.more-info-exit-text').innerHTML = "Click anywhere to exit"
   } 
-  console.log(document.querySelector('.player-info-text'))
-  console.log(document.querySelector('.more-info-exit-text'))
 function blur() 
-{
+{ 
     document.querySelector(".wrapper").classList.toggle('blur'); 
 }
 
@@ -174,65 +172,59 @@ var oh2Info = "Outside hitter 2 is one of the main hitters of the team and will 
 var lInfo = "Liberos will always play in the back row as they are a key defense specialist. However, middle blocker 1 will serve for them in rotation 6";
 const players = document.querySelectorAll(".player"); 
 
-function infoHelper(param)
-{
-    for (let i = 0; i < players.length; i++)
-    {
-        players[i].classList.remove("info"); 
-    }
-    players[param].classList.add("info"); 
-}
-
 function displaySetterInfo()
 {
-    document.querySelector(".player-info-text").innerHTML = sInfo; 
-    infoHelper(2);
+    document.querySelector(".more-info-text").innerHTML = sInfo; 
+    getMoreInfo(); 
 }
 
 function displayOppInfo()
 { 
-    document.querySelector(".player-info-text").innerHTML = oInfo; 
-    infoHelper(5);
+    document.querySelector(".more-info-text").innerHTML = oInfo; 
+    getMoreInfo()
 }
 
 function displayLiberoInfo()
 {
-    document.querySelector(".player-info-text").innerHTML = lInfo; 
-    infoHelper(3);
+    document.querySelector(".more-info-text").innerHTML = lInfo; 
+    getMoreInfo()
 }
 
 function displayMB1Info()
 {
-    document.querySelector(".player-info-text").innerHTML = mInfo; 
-    infoHelper(6);
+    document.querySelector(".more-info-text").innerHTML = mInfo; 
+    getMoreInfo()
 }
 
 function displayMB2Info()
 { 
-    document.querySelector(".player-info-text").innerHTML = mInfo; 
-    infoHelper(1);
+    document.querySelector(".more-info-text").innerHTML = mInfo; 
+    getMoreInfo()
 }
 
 function displayOH1Info()
 {
-    document.querySelector(".player-info-text").innerHTML = oh1Info; 
-    infoHelper(0);
+    document.querySelector(".more-info-text").innerHTML = oh1Info; 
+    getMoreInfo() 
 }
 
 function displayOH2Info()
 {
-    document.querySelector(".player-info-text").innerHTML = oh2Info; 
-    infoHelper(4);
+    document.querySelector(".more-info-text").innerHTML = oh2Info; 
+    getMoreInfo()
 }
 
 //MORE PLAYER INFO---------------------------------------------------------------------------------------------------------------
 function getMoreInfo()
 {
-    var text = document.querySelector(".player-info-text").innerHTML; 
-    document.querySelector(".more-info-text").innerHTML = text; 
     document.querySelector(".more-info").classList.toggle("active"); 
     document.querySelector(".nav-bar").classList.toggle("blur"); 
     blur(); 
+}
+
+function removeInfo()
+{
+    document.querySelectorAll('.player').classList.remove('info'); 
 }
 
 

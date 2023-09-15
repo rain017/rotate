@@ -16,38 +16,38 @@ var op2 = document.getElementById("OPP2")
 
 function displayS1Info()
 {
-    document.querySelector(".player-info-text").innerHTML = s1Info;
-    infoHelper(5);
+    document.querySelector(".more-info-text").innerHTML = s1Info;
+    getMoreInfo()
 }
 
 function displayS2Info()
 {
-    document.querySelector(".player-info-text").innerHTML = s2Info;
-    infoHelper(7);
+    document.querySelector(".more-info-text").innerHTML = s2Info;
+    getMoreInfo()
 }
 
 function displayOP1Info()
 {
-    document.querySelector(".player-info-text").innerHTML = op1Info;
-    infoHelper(2)
+    document.querySelector(".more-info-text").innerHTML = op1Info;
+    getMoreInfo()
 }
 
 function displayOP2Info()
 {
-    document.querySelector(".player-info-text").innerHTML = op2Info; 
-    infoHelper(8)
+    document.querySelector(".more-info-text").innerHTML = op2Info; 
+    getMoreInfo()
 }
 
 function displayMB1Info()
 {
-    document.querySelector(".player-info-text").innerHTML = mb1Info; 
-    infoHelper(6)
+    document.querySelector(".more-info-text").innerHTML = mb1Info; 
+    getMoreInfo()
 }
 
 function displayMB2Info()
 {
-    document.querySelector(".player-info-text").innerHTML = op2Info; 
-    infoHelper(1)
+    document.querySelector(".more-info-text").innerHTML = mb2Info; 
+    getMoreInfo()
 }
 
 //CHANGING ROTATIONS ----------------------------------------------------------------------------------
