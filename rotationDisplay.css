@@ -5,9 +5,9 @@ html
 
 /* -----------------------------------------END OF NAV BAR-----------------------------------*/
 
-.title-and-status 
+.title-and-status  
 {
-    margin-top: 10rem; 
+    margin-top: 7rem; 
     display: flex;
     width: fit-content; 
     height: fit-content; 
@@ -19,6 +19,7 @@ html
 
 .rotation-title
 {
+    font-size: 3rem; 
     overflow: hidden;
     width: fit-content; 
     padding: 0.5rem 1rem 0.5rem 1rem;
@@ -389,9 +390,11 @@ html
     justify-content: space-evenly; 
     align-items: center;
     padding: 2rem;
-    width: 100%;
+    width: 75%;
     height: fit-content;
     background-color: var(--gray); 
+    clip-path: polygon(15% 0, 85% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0 85%, 0 15%);
+
 }
 
 .button-container
@@ -640,6 +643,24 @@ html
     {
         width: 50%; 
     }
+
+    .base-and-info
+    {
+        width: fit-content;
+    }
+
+    .rotation-chooser
+    {
+        width: fit-content; 
+        padding: 1.3rem; 
+    }
+
+    .rotation-changer-container
+    {
+        width: 90%; 
+        flex-direction: row; 
+        justify-content: space-evenly; 
+    }
 }
 
 /* Gotta figure out the media keys for ipad pro mode. shit looks goofy. too much empty space at the bottom cos its a big ass ipad*/
@@ -649,64 +670,65 @@ html
 
     .wrapper
     {
-        flex-direction: column;
+        flex-direction: column; 
+    } 
+
+    .title-and-status
+    {
+        flex-direction: row;  
+        width: 100%; 
+        justify-content: flex-start;
+        gap: 20rem;  
     }
+
+    .rotation-title
+    { 
+        font-size: 6rem; 
+        clip-path: polygon(0 0, 90% 0, 100% 30%, 100% 85%, 100% 100%, 5% 100%, 0 85%, 0 15%);
+        margin-left: 2rem;  
+        padding-left: 1.5rem;
+        padding-right: 1.5rem; 
+    } 
 
     #status
     {
-        scale: 140%; 
-        position: absolute; 
-        left: 13rem;
-    } 
+        scale: 120%;   
+    }
 
     .court-and-interface
     {
         gap: 8rem;
         flex-direction: row; 
         scale: 90%;  
-
     }
-
 
     .court
     {
-        width: 30%;
-        height: 30rem; 
-        margin: 4rem 0 4rem 0;
+        width: 30%;  
     } 
-
     .player 
     {
         width: 2.5rem; 
         height: 2.5rem; 
     }
-
+    .rotation-changer-container
+    {
+        width: fit-content; 
+        gap: 5rem; 
+        justify-content: center; 
+    }
+    .base-and-info,.player-info-container, .player-info-text
+    {
+        scale: 80%;  
+    }
     .base-and-info
     {
         flex-direction: column-reverse;
         justify-content: center; 
-        width: 30%;  
         height: fit-content; 
-        gap: 4rem; 
-        top: 0;  
-        padding: 3rem 0 3rem 0; 
-        
-    }
-
-    .base-btn 
-    {
-        scale: 120%; 
-    }
-
-    .base-border-button-container
-    {
-        padding: 1.5rem; 
-        scale: 120%;  
-    }
-
-    .player-info-container
-    {
-        gap: 3rem; 
+        gap: 0rem; 
+        padding: 2rem; 
+        margin: 0rem; 
     }
 
     .player-info-text
@@ -715,28 +737,29 @@ html
         -webkit-line-clamp: 3; 
         -webkit-box-orient: vertical; 
         white-space: normal;
-        height: 6rem;
         overflow: hidden;
         scale: 120%; 
         line-height: 2.5rem; 
         padding: 2rem;  
     }
 
-    .rotation-changer-container
+    .rotation-chooser
     {
-        flex-direction: row; 
-        align-items: center; 
-        justify-content: space-evenly; 
-        gap: 4rem;  
-        background-color: var(--gray); 
-        padding: 4rem;  
-        clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%); 
-
+        margin: 0rem; 
+        height: fit-content; 
+        justify-content: flex-end;
     }
 
     .button-container 
     {
         flex-direction: row; 
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+   .button, .serve-border, .receive-border, .rotate-border-button-container, .arrow-button-container, .arrow-button, #num
+    {
+        scale: 90%; 
     }
 
     #serve, #receive 
@@ -745,127 +768,40 @@ html
         clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
     }
 
-    .button-container button 
-    {
-        width: 7rem;
-    }
-
-    .rotation-chooser 
-    {
-        flex-direction: column; 
-        margin-top: 0;
-        padding: 0;
-        gap: 4rem;      
-        scale: 120%; 
-        clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 100% 100%, 20% 100%, 0 100%, 0 0);
-    }
- 
-    .rotation-chooser #rotate-button 
-    {
-        scale: 120%; 
-    }
-
-    .rotate-border-button-container
-    { 
-        scale: 120%; 
-        padding: 1.25rem 2rem 1.25rem 2rem;  
-    }
 }
  
 @media only screen and (min-width: 1920px)
 {
 
-    .wrapper
+    .title-and-status
     {
-        flex-direction: column; 
+        gap: 40rem;
     }
-
-    #status
+    .court
     {
-        position: absolute; 
-        scale: 200%;
-        left: 13rem;
-    }
-
-    .rotation-title
-    {
-        scale: 200%; 
-    }
-
-    .court-and-interface
-    {
-        flex-direction: row; 
-        justify-content: space-evenly; 
-        margin-top: 5rem;   
-    }
-
-    .court 
-    {
-        width: 35%; 
-        height: 45rem;
-    }
-
-    .base-and-info
-    {
-        justify-content: space-evenly; 
-        flex-direction: row-reverse; 
-        background-color : transparent; 
-        gap: 4rem; 
-        width: 100%; 
-    }
-
-    .base-btn 
-    {
-        scale: 160%; 
-    }
-
-    .base-border-button-container
-    {
-        padding: 3rem; 
-        scale: 130%;  
-    }
-
-    .player
-    {
-        width: 5rem;
-        height: 5rem; 
-        font-size: 2rem;
+        scale: 120%;
+        width: 25%; 
     }
 
     .rotation-changer-container
     {
-        flex-direction: column;
-        width: 40%;
+        gap: 10rem;
     }
 
-    .rotation-chooser 
+    .court-and-interface
     {
-        width: 90%;  
-        background-color: transparent; 
-        flex-direction: row; 
-        gap: 6rem; 
+        justify-content: space-evenly;
     }
 
-    .rotate-border-button-container
-    { 
-        scale: 120%; 
-        padding: 1.25rem 2rem 1.25rem 2rem;  
-    }
-
-    .button-container
+    .button, .serve-border, .receive-border, .rotate-border-button-container, .arrow-button-container, .arrow-button, #num
     {
-        flex-direction: column; 
-        width: 8rem; 
+        scale: 100%; 
     }
 
-    .button-container button
-    {
-        width: 8rem;
-        font-size: 1.5rem;
-    }
 
-    .footer
+    .base-and-info,.player-info-container, .player-info-text
     {
-        margin-top: 8rem; 
+        scale: 100%;  
     }
+    
 }
